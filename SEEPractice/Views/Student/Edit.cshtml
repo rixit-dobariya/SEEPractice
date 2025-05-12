@@ -1,0 +1,26 @@
+﻿@model Student
+<form method="post">
+	<div class="form-control">
+		<label>Roll no</label>
+		<input asp-for="RollNo" />
+		<span asp-validation-for="RollNo" class="text-danger"></span>
+	</div>
+	<div class="form-control">
+		<label>Name</label>
+		<input asp-for="Name" />
+		<span asp-validation-for="Name" class="text-danger"></span>
+	</div>
+	<div class="form-control">
+		<label>Course</label>
+		<input asp-for="Course" />
+		<span asp-validation-for="Course" class="text-danger"></span>
+	</div>
+	<div class="form-control">
+		<label>Age</label>
+		<input asp-for="Age" />
+		<span asp-validation-for="Age" class="text-danger"></span>
+	</div>
+	<div class="form-control">
+		<input type="submit" value="Update Student" />
+	</div>
+</form>

@@ -1,0 +1,31 @@
+﻿@model List<Student>
+<div class="d-flex justify-content-end">
+	<a asp-action="Create">Add student</a>
+</div>
+<table class="table table-striped">
+	<tr>
+		<td>Id</td>
+		<td>Roll no</td>
+		<td>name</td>
+		<td>course</td>
+		<td>age</td>
+		<td>action</td>
+	</tr>
+	@foreach(Student obj in Model){
+		<tr>
+			<td>@obj.Id</td>
+			<td>@obj.RollNo</td>
+			<td>@obj.Name</td>
+			<td>@obj.Course</td>
+			<td>@obj.Age</td>
+			<td>
+				<a asp-action="Edit" asp-route-id="@obj.Id">Edit</a>
+				<a asp-action="Delete" asp-route-id="@obj.Id">Delete</a>
+			</td>
+		</tr>
+	}
+</table>
+
+@if(TempData["msg"]!=null){
+	<script>alert('@TempData["msg"]')</script>
+}
